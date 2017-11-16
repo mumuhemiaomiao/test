@@ -1,0 +1,141 @@
+*{margin: 0;padding: 0;border: 0;list-style: none;}
+body{background:url(../images/bg_all.png) no-repeat top center;font-family: "微软雅黑";}
+.con{    width: 1000px;
+    margin: 0 auto;
+    padding: 156px 0 150px;
+    overflow: hidden;}
+.logo{    width: 330px;
+    height: 68px;
+    margin: 0 auto 60px;
+	background: url(../images/alogo.png) no-repeat 0px -112px ;
+}
+.main{
+	width: 50%;
+    margin-left: -2px;
+    position: relative;
+    top: 0;
+    left: 50%;
+    border-left: solid 4px #1cadf0;
+    height:100%
+}
+.begin{
+	height: 30px;
+    margin-bottom: 60px;
+    position: relative;
+    left: -17px;
+}
+.begin span{width: 30px;
+    height: 30px;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;background: url(../images/version_bg.png) no-repeat ;}
+.begin span:nth-of-type(1){background-position: -300px -183px;}
+.begin span:nth-of-type(2){background-position: -300px -216px;}
+.begin span:nth-of-type(3){background-position: -300px -249px;}
+.begin .txt{    width: auto;
+    padding-left: 45px;
+    font-size: 16px;
+    line-height: 30px;
+    color: #333;
+    }
+.box{    width: 380px;
+    margin-bottom: 6px;
+    position: relative;
+	    padding-left: 10px;
+    left: 20px;
+}
+.right{background:url(../images/righ.png) no-repeat}
+.grayr{background:url(../images/right_gray.png) no-repeat}
+.left{background: url(../images/left.png) no-repeat right top;}
+.grayl{background: url(../images/left_gray.png) no-repeat right top;}
+
+.right .box_icon{ 
+    top: -6px;
+        left: -29px;}
+.box_icon{
+	width: 14px;
+    height: 14px;
+	position: absolute;
+	background:url(../images/version_bg.png )  no-repeat -316px -317px;
+}
+.content{padding:24px 30px;    background: #1cadf0;color:#fff}
+.content h3 {margin-bottom: 12px;}
+.content h3 span{    margin-left: 5px;
+    font-size: 10px;}
+
+
+ .content ol{    font-size: 12px;
+    line-height: 1.7;}
+     .content ol li{    width: 300px;
+    padding: 0 0 10px 0px;
+    position: relative;}
+   .content ol span{padding-right: 12px;}
+   .left{
+   	padding-right: 10px;
+    left: -414px;
+   }
+   .left .box_icon{
+   	width: 14px;
+    height: 14px;
+    position: absolute;
+    top: -6px;
+    right: -19px;
+   }
+   .grayl .content{
+   	background: #e6e7eb;
+   	color:#666;
+   }
+   .grayr .content{
+   	background: #e6e7eb;
+   	color:#666;
+   }
+   .gray .right{}
+   .end{    height: 32px;
+    margin-top: 60px;
+    position: relative;
+    left: -18px;
+    bottom: -32px;}
+   .end span:nth-of-type(1){
+        width: 32px;
+    height: 32px;
+    background-repeat: no-repeat;
+    position: absolute;
+    background:url(../images/version_bg.png) no-repeat -298px -282px;
+   }
+   .end .txt{
+        width: auto;
+    padding-left: 45px;
+    font-size: 16px;
+    line-height: 30px;
+    color: #333;
+   }
+   /* nav */
+   nav {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6)
+
+}
+nav ul {
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+nav ul li {
+    float: left;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+nav a{display: block;width: 200px;height: 60px;transition: background 0.8s;font-size: 14px; color:#fff;text-decoration: none;}
+nav a.one:hover{background: #228bd6;}
+nav a.two:hover{background: #c33;}
+nav a.three:hover{background: #3aa624;}
+nav a.four:hover{background: #c145cc;}
+nav a.five:hover{background: #f2ca00;}

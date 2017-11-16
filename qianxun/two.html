@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/cssreset.css">
+        <script src="js/jquery-1.11.1.js"></script>
+        <script src="js/jquery.mousewheel.js"></script>
+        <script>
+        	$(function(){
+        		var num=0;
+                $('section').animate({ 'top':'-200%' },500);
+                $('.screen1').removeClass('no');
+        		$('ol li').click(function(event) {
+        			var index=$(this).index();
+        			$(this).addClass('current').siblings().removeClass('current');
+        			$('section').stop().animate({'top':-100*index+'%'}, 400)
+                    $('section>div').eq(index).removeClass('no').siblings().addClass('no')
+        		});
+        		$(document).mousewheel(function(event,n){	
+        			num-=n;
+        			if(num<0){
+        				num=0
+        			}
+        			if(num>6){
+        				num=6
+        			}
+
+        			$('ol li').eq(num).addClass('current').siblings().removeClass('current');
+        			$('section').stop().animate({'top':-100*num+'%'}, 400);
+                      $('section>div').eq(num).removeClass('no').siblings().addClass('no')
+        		})
+                $('.music').click(function(event) {
+                    $('.music').toggleClass('play');
+                    if($('.music').hasClass('play')){
+                          $('audio').get(0).play()
+                    }else{
+                        $('audio').get(0).pause()
+                    }
+                });
+        	})
+        </script>
+        <style>
+        	body,html,section{width: 100%;height: 100%}
+        	section>div{width: 100%;height: 100%;position: relative;}
+        	section{position: relative;}
+			body{overflow: hidden;}
+        	.screen1{background: url('images/bg01.jpg') no-repeat;background-size: 100% 100%;}
+        	.screen2{background: url('images/bg02.jpg') no-repeat;background-size: 100% 100%;}
+        	.screen3{background: url('images/bg03.jpg') no-repeat;background-size: 100% 100%;}
+        	.screen4{background: url('images/bg04.jpg') no-repeat;background-size: 100% 100%;}
+        	.screen5{background: url('images/bg05.jpg') no-repeat;background-size: 100% 100%;}
+        	.screen6{background: url('images/bg06.jpg') no-repeat;background-size: 100% 100%;}
+            .screen7{background: url('images/bg07.jpg') no-repeat;background-size: 100% 100%;}
+			ol{position: fixed;right: 10px;top:30%;z-index: 1}
+			ol li{width: 20px;height: 20px;border-radius: 50%;border:1px solid #dc592c;margin-bottom: 16px;cursor:pointer;}
+			.current{width: 40px;height: 40px;border: 0px;background: url('images/side_bg.png') no-repeat center center;background-size: 90%;margin-left: -10px;animation: move 2s linear infinite;}
+			@keyframes move{
+				0%{transform: rotate(0deg)}
+				100%{transform: rotate(360deg)}
+			}
+			nav{position: fixed;bottom: 0px;width: 100%;height: 60px;background: rgba(0, 0, 0, 0.6);z-index: 1}
+			nav ul{width: 1000px;margin:0px auto;line-height: 60px;}
+			nav li{float: left;}
+			nav a{float: left;width: 200px;text-align: center;transition: all 2s;}
+			nav li:nth-of-type(1) a:hover{background: red;}
+			nav li:nth-of-type(2) a:hover{background: pink;}
+			.down{
+                position: fixed;
+                bottom: 160px;
+                width: 100%;
+                text-align: center;
+
+            }
+            .down ul{
+                width: 310px;
+                font-size: 12px;
+                margin: 0px auto;
+                margin-top: 10px;
+            }
+            .down li{float: left;border-right: 1px solid #fff;padding-right: 10px;margin-right: 10px;color:#fff;font-weight: bold}
+            .down li:nth-of-type(3){border: 0px;margin-right: 0px;}
+            .des{text-align: center;position: absolute;bottom: 330px;width: 100%;font-size: 12px;color:#fff;line-height: 20px;transition: all 2s;}
+           .no p{
+                transform: scale(0.2);
+                opacity: 0.2;
+            }
+            .logo{width: 100%;position: absolute;bottom: 400px;text-align: center;}
+             .no .logo span:nth-of-type(1){margin-right:-1000px; transform: rotate(360deg) }
+          
+            .logo span:nth-of-type(1){padding-right: 20px;background:url('images/logo-text.png') no-repeat right center;display: inline-block;transition: all 2s; }
+           .head{position: absolute;left: 50%;margin-left: -60px;top: 50px;z-index: 2}
+           .screen1 .head{
+            animation: move2 4s linear infinite;
+           }
+           .screen4 .head{margin-left: -75px; animation: rota 12s linear infinite;transform-origin: center bottom;transition: all 8s;}
+
+           @keyframes rota{
+                0%{transform: rotate(0deg)}
+                25%{transform: rotate(10deg)}
+                50%{transform: rotate(0deg)}
+                75%{transform: rotate(-10deg)}
+               100%{transform: rotate(0deg)}
+           }
+            .screen4 .head:hover{
+                left: -200px;
+                top: -200px;
+           }
+           @keyframes move2{
+                0%{transform: translate(0, 0)}
+                50%{transform: translate(0, 20px)}
+                100%{transform: translate(0, 0)}
+           }
+           .scould{position: absolute;animation: move1 800s linear infinite;top: 50px}
+           .cloud{position: absolute;animation: move1 400s linear infinite;top: 150px;z-index: 2}
+           @keyframes move1{
+                0%{transform: translate(0, 0)}
+                25%{transform: translate(2000px, 0)}
+                50%{transform: translate(-2000px, 0)}
+                100%{transform: translate(0, 0)}
+           }
+           .special{
+            margin-left: -45px;
+            top: 65px;
+            animation: move 3s linear infinite;
+           }
+           .pao{width: 300px;position: absolute;left: 50%;margin-left: -100px;top: 200px;
+    
+           }
+           .pao img:nth-of-type(1){animation: move1 18s linear infinite;}
+           .pao img:nth-of-type(2){animation: move1 10s linear infinite;}
+           .pao img:nth-of-type(3){animation: move1 8s linear infinite;}
+           .pao img:nth-of-type(4){animation: move1 7s linear infinite;}
+           .pao img:nth-of-type(5){animation: move1 8s linear infinite;}
+           .pao img:nth-of-type(6){animation: move1 9s linear infinite;}
+           .pao img:nth-of-type(7){animation: move1 5s linear infinite;}
+           .pao img:nth-of-type(8){animation: move1 8s linear infinite;}
+           .pao img:nth-of-type(9){animation: move1 12s linear infinite;}
+          .pao img:nth-of-type(10){animation: move1 4s linear infinite;}
+          .pao img:nth-of-type(11){animation: move1 9s linear infinite;}
+
+            @keyframes move1{
+                0%{transform: translate(0, 0)}
+                100%{transform: translate(0, -300px)} 
+           }
+           .screen5 .head{animation: big 2s linear infinite;}
+           @keyframes big{
+            from{transform: scale(0)}
+            to{transform: scale(4)}
+           }
+           .music{
+                position: fixed;
+                right: 40px;
+                top: 40px;
+                z-index: 2;
+              
+
+           }
+           .play{
+                  animation: move 2s linear infinite;
+           }
+        </style>
+    </head>
+    <body>
+        <audio src="music/Bandari - 满天星 - 班得瑞.mp3" autoplay></audio>
+        <img class="music play" src="images/music.png" width="40px" alt="">
+    	<nav>
+    		<ul>
+    			<li><a class="one" href="">12345</a></li>
+    			<li><a class="two"  href="">12345</a></li>
+    			<li><a class="three"  href="">12345</a></li>
+    			<li><a class="four"  href="">12345</a></li>
+    			<li><a class="five"  href="">12345</a></li>
+    		</ul>
+    	</nav>
+    	<ol>
+    		<li class="current"></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    		<li></li>
+    	</ol>
+
+    	<section>
+    		<div class="screen1 no">
+                <img class="head" src="images/balloon.png" width="120px" alt="">
+                <img class="scould" src="images/scloud.png" width="150px" alt="">
+                <img class="cloud" src="images/cloud.png" width="170px" alt="">
+                
+                <div class="logo">
+                    <span><img src="images/logo.png" alt="" height="50px"></span>
+                    <span><img src="images/title1.png" alt="" height="50px"></span>
+                </div>
+                <p class="des ">就算是再相同的一天，换一扇窗看出去，都是一个不同的<br>
+        世界，从现在起，打开应用中心，发现更大世界。</p>      
+            </div>
+    		<div class="screen2 no">
+            <img src="images/compass.png" width="120px" alt="" class="head">
+            <img src="images/compass-pointer.png" width="90px" alt="" class="head special">
+             <div class="logo">
+                    <span><img src="images/logo.png" alt="" height="50px"></span>
+                    <span><img src="images/title1.png" alt="" height="50px"></span>
+                </div>
+          <p class="des ">就算是再相同的一天，换一扇窗看出去，都是一个不同的<br>
+        世界，从现在起，打开应用中心，发现更大世界。</p>        
+            </div>
+    		<div class="screen3 no">
+            <img src="images/conch.png" width="120px" alt=""  class="head">
+            <h6 class="pao">
+                <img src="images/pao01.png" alt="">
+                <img src="images/pao02.png" alt="">
+                <img src="images/pao03.png" alt="">
+                <img src="images/pao04.png" alt="">
+            <img src="images/pao01.png" alt="">
+               <img src="images/pao06.png" alt="">
+               <img src="images/pao07.png" alt="">
+               <img src="images/pao08.png" alt="">
+               <img src="images/pao09.png" alt="">
+                    <img src="images/pao05.png" alt="">
+                     <img src="images/pao01.png" alt="">
+              
+
+            </h6>
+          <p class="des ">就算是再相同的一天，换一扇窗看出去，都是一个不同的<br>
+        世界，从现在起，打开应用中心，发现更大世界。</p>        
+            </div>
+    		<div class="screen4 no">
+                <img src="images/ballon04.png" width="150px" class="head" alt="">
+          <p class="des ">就算是再相同的一天，换一扇窗看出去，都是一个不同的<br>
+        世界，从现在起，打开应用中心，发现更大世界。</p>        
+            </div>
+    		<div class="screen5 no">
+                <img src="images/pic02.png" width="120px" class="head" alt="">
+          <p class="des ">就算是再相同的一天，换一扇窗看出去，都是一个不同的<br>
+        世界，从现在起，打开应用中心，发现更大世界。</p>        
+            </div>
+    		<div class="screen6 no">
+          <p class="des ">就算是再相同的一天，换一扇窗看出去，都是一个不同的<br>
+        世界，从现在起，打开应用中心，发现更大世界。</p>        
+            </div>
+    		<div class="screen7 no">
+          <p class="des ">就算是再相同的一天，换一扇窗看出去，都是一个不同的<br>
+        世界，从现在起，打开应用中心，发现更大世界。</p>        
+            </div>
+    	</section>
+        <div class="down">
+            <img src="images/down.png" alt="">
+            <ul>
+                <li>版本：1.0 Beta3</li>
+                <li>大小：5.7M</li>
+                <li>更新：2016-11-09</li>
+            </ul>
+        </div>
+
+        
+    </body>
+</html>

@@ -1,0 +1,88 @@
+*{margin: 0;padding: 0;border: 0;list-style: none;}
+body{background:url(../images/bg_all.png) no-repeat top center;}
+.con{    width: 1000px;
+    margin: 0 auto;
+    padding: 156px 0 150px;
+    overflow: hidden;}
+.logo{    width: 330px;
+    height: 68px;
+    margin: 0 auto 60px;
+	background: url(../images/alogo.png) no-repeat 0px -112px ;
+}
+.title{
+	width: 155px;
+	    height: 38px;
+    margin: 0 auto 55px;
+    overflow: hidden;
+    text-indent: -999px;
+    background: url(../images/alogo.png) no-repeat -175px -183px ;
+
+}
+.main dl{
+	    width: 480px;
+    padding-left: 20px;
+    float: left;
+}
+.main dt{
+	    margin-bottom: 6px;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #414141;
+}
+.main img{
+
+    width: 148px;
+   
+   
+}
+.main dd{
+	    margin-bottom: 28px;
+    font-size: 14px;
+    line-height: 1.5;
+    color: #808080;
+}
+.main ul{
+	width: 400px;
+    padding-right: 20px;
+    float: right;
+}
+.main li{
+	    width: 148px;
+    float: left;
+        margin-right: 50px;
+            margin-bottom: 25px;
+
+}
+.main span{    display: block;
+    font-size: 16px;
+    text-align: center;
+    color: #a5a5a5;}
+/* nav */
+nav {
+    position: fixed;
+    width: 100%;
+    height: 60px;
+    bottom: 0;
+    left: 0;
+    z-index: 1;
+    background: rgba(0, 0, 0, 0.6)
+
+}
+nav ul {
+    width: 1000px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+nav ul li {
+    float: left;
+    width: 200px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+}
+nav a{display: block;width: 200px;height: 60px;transition: background 0.8s;font-size: 14px; color:#fff;text-decoration: none;}
+nav a.one:hover{background: #228bd6;}
+nav a.two:hover{background: #c33;}
+nav a.three:hover{background: #3aa624;}
+nav a.four:hover{background: #c145cc;}
+nav a.five:hover{background: #f2ca00;}

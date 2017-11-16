@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="css/integral.css">
+        <script src="js/jquery-1.11.1.js"></script>
+        <script>
+          $(function(){ 
+            var num = 0;
+            var timer = null;
+            function gogogo(){  
+                timer = setInterval(function(){ 
+                    num ++;
+                    if(num>4){
+                        num = 0;
+                        $('.banner ul').css('left', '0');
+                        num=1;
+                    }
+                    $('.banner ul').stop().animate({left:-(num*747)+'px'});
+                },2000);
+            };
+            gogogo();
+            $('.banner').hover(function() {
+              clearInterval(timer);
+            }, function() {
+              clearInterval(timer);
+                gogogo();
+            });
+            //左切换
+            $('.banner .left').click(function(e) {
+              num--;
+              if(num<0){
+                num = 0
+
+              }
+              $('.banner ul').stop().animate({left:-(num*747)+'px'});
+           });
+    
+    
+              //右切换
+            $('.banner .right').click(function(e) {
+              num ++;
+              if(num>4){
+               num=4;
+              }
+              $('.banner ul').stop().animate({left:-(num*747)+'px'});
+            });
+          })
+        </script>
+    </head>
+    <body>
+    	<header>
+    		<div>
+    			<h1 class="logo"><a target="_blank" href="index.html"><span></span></a></h1>
+    		<ul>
+    			<li class="current"><a href="integral.html">兑换特权</a></li>
+    			<li><a href="myscore.html">我的积分</a></li>
+    			<li><a href="rule.html">积分规则</a></li>
+    		</ul>
+    		</div>
+    	</header>
+           
+    	<div class="con">
+    		<div class="top">
+    			<div class="user">
+    				<a href="" class="btn">登录签到</a>
+    				<p>赚积分换特权<br>连续签到<span>3</span>天还能抽大奖！</p>
+    			</div>
+    			 <div class="banner">
+                    <span class="left"></span>
+                    <span class="right"></span>
+                    <ul>
+                         <li><a href="#"><img src="images/banner01.png" alt=""></a></li>
+                         <li><a href="#"><img src="images/banner02.png" alt=""></a></li>
+                         <li><a href="#"><img src="images/banner03.jpg" alt=""></a></li>
+                         <li><a href="#"><img src="images/banner04.jpg" alt=""></a></li>
+                         <li><a href="#"><img src="images/banner01.png" alt=""></a></li>
+
+                    </ul>   
+                </div>
+    		</div>
+    		<div class=" list list01">
+    			<div class="top">
+    				<a href="#">了解更多</a>
+    			</div>
+    			<div class="left">
+    				<h3>
+    					PPTV聚力会员激活码
+    				</h3>
+    				<img src="images/pptv_bg.png" alt="">
+    			</div>
+    			<div class="right">
+    				<a href="#">
+    					<img src="images/pptv7.png" alt="">
+    					<span class="score">
+    						<strong>500</strong>
+    						<span>积分</span>
+    					</span>
+    				</a>
+    				<a href="#">
+    					<img src="images/pptvm.png" alt="">
+    					<span class="score">
+    						<strong>1500</strong>
+    						<span>积分</span>
+    					</span>
+    				</a>
+
+    			</div>
+    		</div>
+    		<div class=" list list02">
+    			<div class="top">
+    				<a href="#">了解更多</a>
+    			</div>
+    			<div class="left">
+    				<h3>
+    					爱奇艺VIP激活码
+    				</h3>
+    				<img src="images/iqy_bg.png" alt="">
+    			</div>
+    			<div class="right">
+    				<a href="#">
+    					<img src="images/iqyday.png" alt="">
+    					<span class="score">
+    						<strong>500</strong>
+    						<span>积分</span>
+    					</span>
+    				</a>
+    				<a href="#">
+    					<img src="images/iqymonth.png" alt="">
+    					<span class="score">
+    						<strong>10000</strong>
+    						<span>积分</span>
+    					</span>
+    				</a>
+
+    			</div>
+    		</div>
+    		<div class=" list list03">
+    			<div class="top">
+    				<a href="#">了解更多</a>
+    			</div>
+    			<div class="left">
+    				<h3>
+    					百度云会员激活码
+    				</h3>
+    				<img src="images/bdy_bg.png" alt="">
+    			</div>
+    			<div class="right">
+    				<a href="#">
+    					<img src="images/bdyone.png" alt="">
+    					<span class="score">
+    						<strong>4000</strong>
+    						<span>积分</span>
+    					</span>
+    				</a>
+    			
+
+    			</div>
+    		</div>
+    		<div class=" list list04">
+    			<div class="top">
+    				<a href="#">了解更多</a>
+    			</div>
+    			<div class="left">
+    				<h3>
+    					百度文库VIP激活码
+    				</h3>
+    				<img src="images/txt_bg.png" alt="">
+    			</div>
+    			<div class="right">
+    				<a href="#">
+    					<img src="images/txt_day.png" alt="">
+    					<span class="score">
+    						<strong>800</strong>
+    						<span>积分</span>
+    					</span>
+    				</a>
+    				<a href="#">
+    					<img src="images/txt_month.png" alt="">
+    					<span class="score">
+    						<strong>4000</strong>
+    						<span>积分</span>
+    					</span>
+    				</a>
+
+    			</div>
+    		</div>
+    	</div>
+    </body>
+</html>
